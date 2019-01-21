@@ -1,0 +1,33 @@
+ZSTD_INCLUDE="zstd/lib/"
+ZSTD_LIB="zstd/lib/libzstd.a"
+
+#ensure we use c++ compiler that can handle 'long long'
+CXX_STD = CXX11
+
+#expose headers in installed package include folder
+USER_INCLUDE = ${R_PACKAGE_DIR}/include
+USER_LIB_DIR = ${R_PACKAGE_DIR}/lib${R_ARCH}/
+
+PKG_CFLAGS = -I${ZSTD_INCLUDE}
+PKG_LIBS = ${USER_LIB_DIR}libzstd.a
+
+# .PHONY: clean
+# clean:
+# 	rm "*o"
+# 	$(MAKE) -C zstd clean
+
+all: copying $(SHLIB)
+
+$(SHLIB): rzstdlib.o
+
+rzstlib.o: copying
+
+zstd/lib/libzstd.a:
+	$(MAKE) -C zstd lib
+
+#copy hdf5 library headers to package include
+copying: zstd/lib/libzstd.a
+	mkdir -p "${USER_INCLUDE}"
+	cp ${ZSTD_INCLUDE}/*.h ${USER_INCLUDE}
+	mkdir -p "${USER_LIB_DIR}"
+	cp ${ZSTD_LIB} ${USER_LIB_DIR}

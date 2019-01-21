@@ -1,5 +1,5 @@
 #' @keywords internal
-#' @useDynLib libzstd
+#' @useDynLib rzstdlib
 NULL
 #' @import RcppEigen
 "_PACKAGE"
