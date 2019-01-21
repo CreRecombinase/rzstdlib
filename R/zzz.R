@@ -16,7 +16,7 @@ pkgconfig <- function(opt = c("PKG_C_LIBS","PKG_RPATH")) {
         unset = system.file("libs", package="rzstdlib", mustWork=TRUE)
     )
     if(opt=="PKG_RPATH"){
-      cat(paste0("-L",path," -lzstd -Wl,-rpath,",path))
+      cat(paste0("-L",path," -Wl,-rpath,",path," -lzstd"))
     }
     else{
 
