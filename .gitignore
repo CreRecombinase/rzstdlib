@@ -1,1 +1,4 @@
 .Rproj.user
+.Rhis*
+.ccls
+src/*o
