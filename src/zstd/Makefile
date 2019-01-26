@@ -6,6 +6,7 @@
 # LICENSE file in the root directory of this source tree) and the GPLv2 (found
 # in the COPYING file in the root directory of this source tree).
 # ################################################################
+include ${R_HOME}/etc${R_ARCH}/Makeconf
 
 PRGDIR   = programs
 ZSTDDIR  = lib

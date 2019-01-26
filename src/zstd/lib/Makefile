@@ -6,7 +6,7 @@
 # LICENSE file in the root directory of this source tree) and the GPLv2 (found
 # in the COPYING file in the root directory of this source tree).
 # ################################################################
-
+include ${R_HOME}/etc${R_ARCH}/Makeconf
 # Version numbers
 LIBVER_MAJOR_SCRIPT:=`sed -n '/define ZSTD_VERSION_MAJOR/s/.*[[:blank:]]\([0-9][0-9]*\).*/\1/p' < ./zstd.h`
 LIBVER_MINOR_SCRIPT:=`sed -n '/define ZSTD_VERSION_MINOR/s/.*[[:blank:]]\([0-9][0-9]*\).*/\1/p' < ./zstd.h`

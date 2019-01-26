@@ -13,7 +13,7 @@
 # zstd-compress : compressor-only version of zstd
 # zstd-decompress : decompressor-only version of zstd
 # ##########################################################################
-
+include ${R_HOME}/etc${R_ARCH}/Makeconf
 ZSTDDIR = ../lib
 
 # Version numbers
