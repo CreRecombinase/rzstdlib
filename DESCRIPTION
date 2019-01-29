@@ -1,9 +1,10 @@
 Package: rzstdlib
-Title: What the Package Does (one line, title case)
+Title: R package containing the zstd library
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: c(person("Nicholas Knoblauch", email = "nwknoblauch@gmail.com", role = c("aut", "cre")),person("Facebook, Inc", role = c("aut","cph"), comment = "Fast real-time compression library"))
+Description: Zstandard, or zstd as short version, is a fast lossless compression algorithm, targeting real-time compression scenarios at zlib-level and better compression ratios.  It's backed by a very fast entropy stage, provided by Huff0 and FSE library.  This package distributes stand-alone binaries of zstd, as well as static libraries that can be used by other packages
 Depends: R (>= 3.5.0)
-License: What license is it under?
+License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.1.1

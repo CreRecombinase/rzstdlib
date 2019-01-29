@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -f src/*.o
+R CMD make -C src/zstd clean

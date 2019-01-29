@@ -1,2 +1,9 @@
+^\.travis\.yml$
 ^rzstdlib\.Rproj$
 ^\.Rproj\.user$
+.ccls
+src/zstd/.buckconfig
+src/zstd/.travis.yml
+src/zstd/contrib/linux-kernel/lib/zstd/.clang-format
+src/zstd/.circleci
+src/zstd/.buckversion

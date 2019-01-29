@@ -9,11 +9,11 @@
 #' @examples
 #' pkgconfig("PKG_C_LIBS")
 #' @export
-pkgconfig <- function(opt = c("PKG_C_LIBS","PKG_RPATH")) {
+pkgconfig <- function(opt = c("PKG_C_LIBS", "PKG_RPATH")) {
 
     path <- Sys.getenv(
         x = "RZSTDLIB_RPATH",
-        unset = system.file("lib", package="rzstdlib", mustWork=TRUE)
+        unset = system.file("lib", package = "rzstdlib", mustWork = TRUE)
     )
 
     if (nzchar(.Platform$r_arch)) {
@@ -24,24 +24,21 @@ pkgconfig <- function(opt = c("PKG_C_LIBS","PKG_RPATH")) {
     patharch <- paste0(path, arch)
 
     result <- switch(match.arg(opt),
-                                        # PKG_CPPFLAGS = {
-                                        #     sprintf('-I"%s"', system.file("include", package="Rhdf5lib"))
-                                        # },
                      PKG_C_LIBS = {
-                         switch(Sys.info()['sysname'],
+                         switch(Sys.info()["sysname"],
                                 Windows = {
                                     patharch <- gsub(x = shortPathName(patharch),
                                                      pattern = "\\",
                                                      replacement = "/",
                                                      fixed = TRUE)
-                                    sprintf('-L%s -lzstd',
+                                    sprintf("-L%s -lzstd",
                                             patharch)
                                 }, {
-                                    sprintf('%s/libzstd.a ',
+                                    sprintf("%s/libzstd.a ",
                                             patharch, patharch)
 
-                              }
-                       )
+                                }
+                                )
                      }
                      )
 
