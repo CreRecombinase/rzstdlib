@@ -2,3 +2,8 @@
 *.o
 *.so
 *.dll
+compile_commands.json
+src/zstd/zstd
+src/zstd/lib/libzstd.so*
+src/zstd/lib/libzstd.a
+.Rhistory
