@@ -16,14 +16,9 @@ USER_LIB_DIR = ${R_PACKAGE_DIR}/lib${R_ARCH}/
 PKG_CFLAGS = -I${ZSTD_INCLUDE}
 PKG_LIBS = ${USER_LIB_DIR}libzstd.a -lz
 
-# .PHONY: clean
-# clean:
-# 	rm "*o"
-# 	$(MAKE) -C zstd clean
-
 all: copying $(SHLIB)
 
-$(SHLIB): rzstdlib.o
+$(SHLIB): RcppExports.o	io.o
 
 rzstlib.o: copying
 
